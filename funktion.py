@@ -37,3 +37,17 @@ def create_ex_class():
                                            i['operationAmount']['amount'],
                                            i['state']))
     return list_ex_class
+
+
+def beautiful_result(operation):
+    """Вывод результата в требуемом формате"""
+    if operation.from_ is None:
+        print(operation.beautiful_data(), operation.description)
+        print(operation.to)
+        print(operation.summa, operation.currency)
+        print()
+    else:
+        print(operation.beautiful_data(), operation.description)
+        print(f'{operation.from_}  ->  {operation.to}')
+        print(operation.summa, operation.currency)
+        print()
