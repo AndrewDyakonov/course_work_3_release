@@ -1,12 +1,13 @@
 import json
 from classes import Operation
 
+
 def get_json_to_list():
     """
     Получить список операций из файла operation.json
     :return:
     """
-    with open('operations.json', 'r', encoding="UTF-8") as file:
+    with open('/home/blendi/course_work_3_release/operations.json', 'r', encoding="UTF-8") as file:
         list_operation = json.load(file)
     return list_operation
 
@@ -46,8 +47,10 @@ def beautiful_result(operation):
         print(operation.to)
         print(operation.summa, operation.currency)
         print()
+        return True
     else:
         print(operation.beautiful_data(), operation.description)
         print(f'{operation.from_}  ->  {operation.to}')
         print(operation.summa, operation.currency)
         print()
+        return True
